@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ella Rose O. Alfeche - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Flower Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,182,193,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,105,180,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255,192,203,0.2) 0%, transparent 50%);
+            z-index: -2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #ff69b4;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff69b4;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255,182,193,0.8), rgba(255,105,180,0.6));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='flower' x='0' y='0' width='20' height='20' patternUnits='userSpaceOnUse'><circle cx='10' cy='10' r='3' fill='%23ff69b4' opacity='0.3'/><circle cx='10' cy='10' r='1' fill='%23fff'/></pattern></defs><rect width='100' height='100' fill='url(%23flower)'/></svg>");
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,105,180,0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,105,180,0.6);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(255,255,255,0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, rgba(255,182,193,0.2), rgba(255,105,180,0.1));
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,105,180,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255,105,180,0.3);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255,105,180,0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(255,255,255,0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,105,180,0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #ff69b4, #ffb6c1);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            section h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">🌸 Ella Rose</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ella Rose O. Alfeche</h1>
+            <p>BS Computer Science Student | Christ the King College de Marading</p>
+            <a href="#about" class="cta-button">Discover More <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="https://via.placeholder.com/150/ff69b4/fff?text=Ella" alt="Ella Rose" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 2rem; border: 5px solid #ff69b4;">
+                <p>🌸 Hello! I'm Ella Rose O. Alfeche, a passionate Computer Science student at Christ the King College de Marading. I love creating beautiful and functional websites, solving complex problems, and bringing ideas to life through code.</p>
+                <p>With a keen eye for design and a strong foundation in programming, I'm always eager to learn new technologies and work on exciting projects that make a difference!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills" style="background: rgba(255,255,255,0.7);">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Creating beautiful, responsive websites with modern styling</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive web applications and dynamic user experiences</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Backend development and data analysis</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database</h3>
+                    <p>MySQL & MongoDB for efficient data management</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <p>Modern frontend framework for building SPAs</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first approach for all devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/ff69b4/fff?text=E-Commerce" alt="E-Commerce">
+                    <div class="project-content">
+                        <h3>🌸 Flower Shop Website</h3>
+                        <p>A beautiful responsive e-commerce website with modern design and smooth animations.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a>
+                            <a href="#" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/ffb6c1/fff?text=Todo+App" alt="Todo App">
+                    <div class="project-content">
+                        <h3>Task Manager App</h3>
+                        <p>Full-stack todo application with local storage and beautiful UI design.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a>
+                            <a href="#" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/ff1493/fff?text=Weather" alt="Weather App">
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>Real-time weather application using API integration with animated UI.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a>
+                            <a href="#" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" style="background: rgba(255,255,255,0.7);">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>Ready to work together? Let's create something beautiful! 🌸</p>
+                <div class="contact-links">
+                    <a href="mailto:ellarose@example.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://linkedin.com/in/ellarose" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/ellarose" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ella Rose O. Alfeche. Made with <i class="fas fa-heart" style="color: #ff1493;"></i> and lots of flowers 🌸</p>
+    </footer>
+
+    
